@@ -1,0 +1,16 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+
+# Production builds
+frontend/dist/
+
+# Harness state
+.harness/state/
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
