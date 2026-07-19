@@ -25,7 +25,14 @@ export default function App() {
         body: JSON.stringify({ birthDate, targetMonth: month })
       });
 
-      const resData = await response.json();
+      let resData;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        resData = await response.json();
+      } else {
+        const errorText = await response.text();
+        throw new Error(errorText || `Yêu cầu thất bại với mã trạng thái ${response.status}`);
+      }
 
       if (!response.ok) {
         throw new Error(resData.error || "Không thể tải dự đoán từ hệ thống.");

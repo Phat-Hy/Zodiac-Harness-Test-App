@@ -2,6 +2,7 @@
   "name": "zodiac-horoscope-project",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "postinstall": "npm install --prefix backend && npm install --prefix frontend",
     "build": "npm run build --prefix frontend",
