@@ -66,7 +66,7 @@ app.post("/api/horoscope", (req, res) => {
 });
 
 // Serve static frontend files in production
-const frontendDistPath = path.join(__dirname, "../frontend/dist");
+const frontendDistPath = path.join(__dirname, "../dist");
 app.use(express.static(frontendDistPath));
 
 // Fallback to React index.html for client-side routing
